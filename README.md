@@ -23,7 +23,7 @@ This project demonstrates object-oriented programming, collections (HashMap, Arr
 
 ## How to run
 1. Clone the repository:  
-   `git clone https://github.com/your-username/bank-atm-console.git`
+  https://github.com/Alexandershurikhere/bank-atm-console
 2. Open the project in any Java IDE (IntelliJ IDEA, Eclipse, etc.)
 3. Run the `Main` class (it contains sample accounts)
 
