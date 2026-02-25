@@ -3,8 +3,10 @@ package Practice;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
+//It is class with private fields
 
 public class ATM {
+    //this is encapsulation
     private HashMap<String,Account> accounts;
     private Account currentAccount;
 
@@ -12,7 +14,7 @@ public class ATM {
         accounts = new HashMap<>();
         currentAccount = null;
     }
-
+//this method create an account
     public  void addAccount(Account account){
         if(accounts.containsKey(account.getCardNumber())){
             System.out.println("Счет с таким номером уже существует");
@@ -22,6 +24,7 @@ public class ATM {
             System.out.println("Счет успешно добавлен");
         }
     }
+    // this method check a number card and pin
     public boolean authorize(String cardNumber, int pin) {
         Account account = accounts.get(cardNumber);
         if (account != null && account.getPin() == pin) {
@@ -30,10 +33,12 @@ public class ATM {
         }
         return false;
     }
+    //this method delete an account of user
     public void logout(){
         currentAccount = null;
 
     }
+    //this method show menu
     public void showMenu() {
         System.out.println("\n=== МЕНЮ ===");
         System.out.println("1. Проверить баланс");
@@ -51,6 +56,7 @@ public class ATM {
         }
         System.out.printf("Ваш баланс: %.2f руб.\n", currentAccount.getBalance());
     }
+    //this method withdraw money with the account
     public void withdraw(){
         if(currentAccount==null){
             System.out.println("Сначала авторизуйтесь");
@@ -68,6 +74,7 @@ public class ATM {
         }
 
     }
+    //this method put money on the account
     public void deposit(){
         if(currentAccount==null){
             System.out.println("Сначала авторизуйтесь");
@@ -85,6 +92,7 @@ public class ATM {
         }
 
     }
+    //this method show the history the  user
     public void showHistory() {
         if (currentAccount == null) {
             System.out.println("Сначала авторизуйтесь!");
@@ -102,6 +110,7 @@ public class ATM {
             }
         }
     }
+    // this method work with the user
     public void run() {
        Scanner scanner=new Scanner(System.in);
         System.out.println("Добро пожаловать в банкомат");
